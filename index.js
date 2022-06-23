@@ -26,7 +26,13 @@ function trimProperties(obj) {
  * trimPropertiesMutation({ name: '  jane  ' }) // returns the object mutated in place { name: 'jane' }
  */
 function trimPropertiesMutation(obj) {
-  // ✨ implement
+  const valuesArr = Object.values(obj);
+  
+  Object.keys(obj).map((key, idx) => {
+    obj[key] = valuesArr[idx].trim();
+  });
+  
+  return obj;
 }
 
 /**

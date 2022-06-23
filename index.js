@@ -7,7 +7,14 @@
  * trimProperties({ name: '  jane  ' }) // returns a new object { name: 'jane' }
  */
 function trimProperties(obj) {
-  // ✨ implement
+  const testObj = { ...obj };
+  const valuesArr = Object.values(obj);
+  
+  Object.keys(obj).map((key, idx) => {
+    testObj[key] = valuesArr[idx].trim();
+  });
+  
+  return testObj;
 }
 
 /**

@@ -60,6 +60,8 @@ class Counter {
    */
   constructor(initialNumber) {
     // ✨ initialize whatever properties are needed
+    this.count = initialNumber;
+    this.callTimes = 0;
   }
 
   /**
@@ -75,7 +77,16 @@ class Counter {
    * counter.countDown() // returns 0
    */
   countDown() {
-    // ✨ implement
+    if (this.callTimes === 0) {
+      this.callTimes++;
+      return this.count;
+    }
+    if (this.count === 0) {
+      return this.count;
+    }
+
+    this.count--;
+    return this.count;
   }
 }
 
